@@ -52,6 +52,9 @@ src_configure() {
 src_install() {
 	cmake-utils_src_install
 
+	insinto /usr/share/cmake/Modules
+	doins cmake/Modules/FindSFML.cmake
+
 	if use examples ; then
 		docompress -x /usr/share/doc/${PF}/examples
 		dodoc -r examples
